@@ -1,0 +1,21 @@
+.heading {
+  color: brown;
+}
+
+h2,
+hr,
+ul {
+  margin: 20px;
+}
+
+ul {
+  padding: 40px;
+}
+
+footer {
+  background-color: brown;
+  color: white;
+  font-size: 24px;
+  text-align: center;
+  padding: 20px;
+}
