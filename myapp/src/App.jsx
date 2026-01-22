@@ -1,58 +1,35 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
-
+import Footer from "./components/footer";
+import Header from "./components/header";
+import React from "react";
+//component
 function App() {
-  const [count, setCount] = useState(0);
+  let fname = "Utkarsh";
+  let lname = "Gupta";
+
+  function getAge() {
+    return 4 * 20;
+  }
+
+  const isAdult = false;
+
+  const user = {
+    name: "Abc",
+    city: "xyz",
+  };
 
   return (
-    <>
-      <h1 className="heading">Hello World</h1>
-      <h2>Utkarsh Gupta</h2>
-      <hr />
-      <h2>Skills</h2>
-      <ul>
-        <li>React</li>
-        <li>JS</li>
-        <li>HTML</li>
-        <li>CSS</li>
-      </ul>
-      <hr />
-      <h2>Edutation</h2>
-      <ul>
-        <li>React</li>
-        <li>JS</li>
-        <li>HTML</li>
-        <li>CSS</li>
-      </ul>
-      <hr />
-      <h2>Expirence</h2>
-      <ul>
-        <li>React</li>
-        <li>JS</li>
-        <li>HTML</li>
-        <li>CSS</li>
-      </ul>
-      <hr />
-      <h2>Certificates</h2>
-      <ul>
-        <li>React</li>
-        <li>JS</li>
-        <li>HTML</li>
-        <li>CSS</li>
-      </ul>
-      <hr />
-      <h2>Achivement</h2>
-      <ul>
-        <li>React</li>
-        <li>JS</li>
-        <li>HTML</li>
-        <li>CSS</li>
-      </ul>
-      <footer>Made with Love</footer>
-    </>
+    <div>
+      <Header />
+      <h1>Welcome to My App!</h1>
+      <h2>{fname + " " + lname}</h2>
+      <h3>Age: {getAge()}</h3>
+      {isAdult ? <h3>Adult User</h3> : <h3>Minor User</h3>}
+      {[<p>1</p>, <p>2</p>, <p>3</p>]}
+      <h3>User Info:</h3>
+      <p>Name: {user.name}</p>
+      <p>City: {user.city}</p>
+      <Footer />
+    </div>
   );
 }
-
 export default App;
