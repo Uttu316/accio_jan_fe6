@@ -1,11 +1,21 @@
 import { FaStar, FaShoppingCart } from "react-icons/fa";
 import styles from "./productitem.module.css";
+import { useNavigate } from "react-router";
 
 const ProductItem = ({ product }) => {
+  const navigate = useNavigate();
+
+  const onProductClick = () => {
+    navigate(`/product/${product.id}`);
+  };
   return (
-    <div className={styles.productCard}>
+    <div onClick={onProductClick} className={styles.productCard}>
       <div className={styles.imageContainer}>
-        <img src={product.image} alt={product.title} className={styles.productImage} />
+        <img
+          src={product.image}
+          alt={product.title}
+          className={styles.productImage}
+        />
         <span className={styles.categoryTag}>{product.category}</span>
       </div>
       <div className={styles.productInfo}>
@@ -17,11 +27,17 @@ const ProductItem = ({ product }) => {
               {[...Array(5)].map((_, i) => (
                 <FaStar
                   key={i}
-                  className={i < Math.round(product.rating.rate) ? styles.starFilled : styles.starEmpty}
+                  className={
+                    i < Math.round(product.rating.rate)
+                      ? styles.starFilled
+                      : styles.starEmpty
+                  }
                 />
               ))}
             </span>
-            <span className={styles.count}>({product.rating.count} reviews)</span>
+            <span className={styles.count}>
+              ({product.rating.count} reviews)
+            </span>
           </div>
           <div className={styles.price}>${product.price}</div>
         </div>

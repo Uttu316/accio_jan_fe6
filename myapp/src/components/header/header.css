@@ -30,6 +30,10 @@
   color: salmon;
   cursor: pointer;
 }
+.navbar a.active {
+  color: salmon;
+  cursor: pointer;
+}
 .app_name_container {
   display: flex;
   align-items: center;
@@ -38,4 +42,5 @@
 .app_name {
   font-size: 28px;
   font-weight: 600;
+  margin: 0;
 }

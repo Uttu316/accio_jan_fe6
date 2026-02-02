@@ -67,7 +67,7 @@ const ProductsContainer = () => {
             />
           </aside>
           <main className={styles.productMain}>
-            <ProductList products={products} />
+            <ProductList currFilter={currFilter} products={products} />
           </main>
         </div>
       )}

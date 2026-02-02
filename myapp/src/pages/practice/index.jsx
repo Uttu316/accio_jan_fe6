@@ -9,7 +9,7 @@ import Banner from "../../components/banner";
 function PracticePage() {
   return (
     <div>
-      <Header />
+      <Header title={"My App"} />
       <h1 className="heading">Welcome to My App!</h1>
       <UserList />
       <Counter />
