@@ -1,12 +1,11 @@
-import Header from "../../components/header";
+import PageWrapper from "../../components/pageWrapper";
 import ProductsContainer from "../../components/productsContainer";
 
 const ProductsPage = () => {
   return (
-    <div>
-      <Header title={"Product"} />
+    <PageWrapper title={"Product"}>
       <ProductsContainer />
-    </div>
+    </PageWrapper>
   );
 };
 export default ProductsPage;

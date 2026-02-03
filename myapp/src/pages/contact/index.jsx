@@ -7,13 +7,12 @@ import {
   FaTwitter,
   FaInstagram,
 } from "react-icons/fa";
-import Header from "../../components/header";
 import styles from "./Contact.module.css";
+import PageWrapper from "../../components/pageWrapper";
 
 const Contact = () => {
   return (
-    <div className={styles.container}>
-      <Header title="E-Shop" />
+    <PageWrapper title="E-Shop" className={styles.container}>
       <div className={styles.header}>
         <h1>Contact Us</h1>
         <p>Any questions or remarks? Just write us a message!</p>
@@ -63,7 +62,7 @@ const Contact = () => {
           </button>
         </form>
       </section>
-    </div>
+    </PageWrapper>
   );
 };
 

@@ -1,8 +1,8 @@
 import { useParams } from "react-router";
-import Header from "../../components/header";
 import styles from "./Product.module.css";
 import { useEffect, useState } from "react";
 import { API } from "../../services";
+import PageWrapper from "../../components/pageWrapper";
 
 const ProductPage = () => {
   const { productId } = useParams();
@@ -34,8 +34,7 @@ const ProductPage = () => {
   const noProduct = isSuccess && product === null;
 
   return (
-    <div>
-      <Header title={"Product"} />
+    <PageWrapper title={"Product"}>
       {isLoading && <h2>Loading Your Product...</h2>}
       {isError && <h2>Something Went Wrong</h2>}
       {noProduct && <h2> Product Not Available</h2>}
@@ -66,7 +65,7 @@ const ProductPage = () => {
           </div>
         </div>
       )}
-    </div>
+    </PageWrapper>
   );
 };
 

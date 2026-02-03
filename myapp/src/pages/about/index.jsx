@@ -1,12 +1,11 @@
 import React from "react";
 import { FaUsers, FaLightbulb, FaGlobe } from "react-icons/fa";
-import Header from "../../components/header";
 import styles from "./About.module.css";
+import PageWrapper from "../../components/pageWrapper";
 
 const About = () => {
   return (
-    <div className={styles.container}>
-      <Header title="E-Shop" />
+    <PageWrapper title="E-Shop" className={styles.container}>
       <div className={styles.header}>
         <h1 className={styles.title}>About Our Brand</h1>
         <p className={styles.subtitle}>
@@ -60,7 +59,7 @@ const About = () => {
           </div>
         </div>
       </section>
-    </div>
+    </PageWrapper>
   );
 };
 

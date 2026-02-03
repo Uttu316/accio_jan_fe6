@@ -3,7 +3,9 @@
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -143,5 +145,29 @@
 }
 
 .addToCartBtn:active {
+  transform: scale(0.98);
+}
+
+.removeFromCart {
+  width: 100%;
+  padding: 0.8rem;
+  background: salmon;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.removeFromCart:hover {
+  background: rgb(230, 113, 101);
+}
+
+.removeFromCart:active {
   transform: scale(0.98);
 }

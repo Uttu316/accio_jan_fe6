@@ -1,8 +1,8 @@
 import React from "react";
 import { FaRocket, FaUndo, FaLock } from "react-icons/fa";
-import Header from "../../components/header";
 import styles from "./Home.module.css";
 import { Link } from "react-router";
+import PageWrapper from "../../components/pageWrapper";
 
 const Home = () => {
   const featuredProducts = [
@@ -37,8 +37,7 @@ const Home = () => {
   ];
 
   return (
-    <div className={styles.container}>
-      <Header title="E-Shop" />
+    <PageWrapper className={styles.container} title="E-Shop">
       <header className={styles.hero}>
         <h1 className={styles.heroTitle}>Summer Collection 2024</h1>
         <p className={styles.heroSubtitle}>
@@ -85,7 +84,7 @@ const Home = () => {
           ))}
         </div>
       </section>
-    </div>
+    </PageWrapper>
   );
 };
 

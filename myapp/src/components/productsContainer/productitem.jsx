@@ -1,13 +1,26 @@
 import { FaStar, FaShoppingCart } from "react-icons/fa";
 import styles from "./productitem.module.css";
 import { useNavigate } from "react-router";
+import { useContext } from "react";
+import { CartContext } from "../../contexts/cartContext";
 
 const ProductItem = ({ product }) => {
   const navigate = useNavigate();
 
+  const { addInCart, removeFromCart, isInCart } = useContext(CartContext);
+
+  const onAddCart = (e) => {
+    e.stopPropagation();
+    addInCart(product);
+  };
+  const onRemoveCart = (e) => {
+    e.stopPropagation();
+    removeFromCart(product.id);
+  };
   const onProductClick = () => {
     navigate(`/product/${product.id}`);
   };
+  const inCart = isInCart(product.id);
   return (
     <div onClick={onProductClick} className={styles.productCard}>
       <div className={styles.imageContainer}>
@@ -41,10 +54,18 @@ const ProductItem = ({ product }) => {
           </div>
           <div className={styles.price}>${product.price}</div>
         </div>
-        <button className={styles.addToCartBtn}>
-          <FaShoppingCart />
-          <span>Add to Cart</span>
-        </button>
+        {!inCart && (
+          <button onClick={onAddCart} className={styles.addToCartBtn}>
+            <FaShoppingCart />
+            <span>Add to Cart</span>
+          </button>
+        )}
+        {inCart && (
+          <button onClick={onRemoveCart} className={styles.removeFromCart}>
+            <FaShoppingCart />
+            <span>Remove from Cart</span>
+          </button>
+        )}
       </div>
     </div>
   );
